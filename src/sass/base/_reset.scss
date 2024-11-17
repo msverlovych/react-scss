@@ -1,0 +1,42 @@
+@use '../abstracts/variables' as vars;
+
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+  font-family: vars.$inter;
+  font-weight: vars.$font-regular;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul { list-style: none; }
+
+.app-container {
+  overflow-x: hidden;
+  transition: 0.5s ease-in-out;
+  padding: 2rem 4rem;
+
+  @media screen and (min-width: vars.$responsive-xs) and (max-width: vars.$responsive-lg) {
+    padding: 0;
+  }
+}
+
+.app-container::-webkit-scrollbar {
+  display: none;
+}

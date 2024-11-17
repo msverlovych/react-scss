@@ -1,0 +1,137 @@
+@use '../../sass/abstracts/index' as *;
+@use '../../sass/themes/theme' as theme;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  box-shadow: $shadowGray-sm;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    &-link {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var(--primary-color, #007BFF);
+      }
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:focus {
+      outline: 2px solid var(--primary-color, #007BFF);
+      outline-offset: 2px;
+    }
+
+    &-icon {
+      pointer-events: none;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &-item {
+      margin-left: 1.5rem;
+
+      &-link {
+        text-decoration: none;
+        font-size: 1rem;
+        color: inherit;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+          color: var(--primary-color, #007BFF);
+        }
+      }
+    }
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &__mode-switcher {
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: inherit;
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &:focus {
+        outline: 2px solid var(--primary-color, #007BFF);
+        outline-offset: 2px;
+      }
+    }
+
+    &-icon {
+      pointer-events: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+
+    &__menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      background-color: var(--bg-color);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      &-item {
+        margin: 1rem 0;
+
+        &-link {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    &__menu--open {
+      display: flex;
+    }
+
+    &__menu-toggle {
+      display: block;
+    }
+  }
+}
