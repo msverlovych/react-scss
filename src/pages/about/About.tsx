@@ -5,13 +5,13 @@ import Product from '../../assets/images/Certina-DS-PH200-2.webp';
 
 const About: React.FC = () => {
   return (
-    <main className="about">
-      <section className="about__header">
+    <section className="about">
+      <div className="about__header">
         <h1 className="about__title">Do it in one click!</h1>
         <p className="about__subtitle">Discover more about our product</p>
-      </section>
+      </div>
 
-      <section className="about__content">
+      <div className="about__content">
         <article className="about__card">
           <img
             src={Product}
@@ -31,8 +31,8 @@ const About: React.FC = () => {
             </button>
           </div>
         </article>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 
