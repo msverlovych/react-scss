@@ -1,5 +1,4 @@
-@use '../../sass/abstracts/index' as *;
-@use '../../sass/themes/theme' as theme;
+@use '../../sass/abstracts/index';
 
 .navbar {
   display: flex;
@@ -7,7 +6,7 @@
   align-items: center;
   padding: 1rem 2rem;
   background-color: transparent;
-  box-shadow: $shadowGray-sm;
+  border-bottom: solid 0.5px var(--color-primary);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
   &__logo {
@@ -16,35 +15,12 @@
 
     &-link {
       text-decoration: none;
-      color: inherit;
+      color: var(--color-primary);
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: var(--primary-color, #007BFF);
+        color: var(--color-accent);
       }
-    }
-  }
-
-  &__menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: inherit;
-    transition: transform 0.2s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    &:focus {
-      outline: 2px solid var(--primary-color, #007BFF);
-      outline-offset: 2px;
-    }
-
-    &-icon {
-      pointer-events: none;
     }
   }
 
@@ -60,39 +36,22 @@
       &-link {
         text-decoration: none;
         font-size: 1rem;
-        color: inherit;
+        color: var(--color-primary);
         transition: color 0.3s ease-in-out;
 
         &:hover {
-          color: var(--primary-color, #007BFF);
+          color: var(--color-accent);
         }
       }
-    }
-
-    &--open {
-      display: block;
     }
   }
 
   &__mode-switcher {
     &-button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: inherit;
-      transition: transform 0.2s ease-in-out;
+      @include index.button('icon');
 
       &:hover {
         transform: scale(1.1);
-      }
-
-      &:focus {
-        outline: 2px solid var(--primary-color, #007BFF);
-        outline-offset: 2px;
       }
     }
 
@@ -108,30 +67,6 @@
 
     &__menu {
       display: none;
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-      background-color: var(--bg-color);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: absolute;
-      top: 100%;
-      left: 0;
-
-      &-item {
-        margin: 1rem 0;
-
-        &-link {
-          font-size: 1.2rem;
-        }
-      }
-    }
-
-    &__menu--open {
-      display: flex;
-    }
-
-    &__menu-toggle {
-      display: block;
     }
   }
 }

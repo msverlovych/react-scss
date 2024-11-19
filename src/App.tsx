@@ -1,17 +1,11 @@
 import { ReactElement } from 'react';
-import { Navbar } from './components';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './router/AppRouter.tsx';
 
 function App(): ReactElement {
   return (
-    <>
-      <Navbar />
-      <main>
-        <div className="app-container">
-          <h1>Hello World!</h1>
-        </div>
-      </main>
-    </>
-  )
+    <RouterProvider router={router} />
+  );
 }
 
 export default App;

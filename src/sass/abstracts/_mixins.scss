@@ -12,3 +12,37 @@
   width: 1px;
   overflow: hidden;
 }
+
+@mixin button($type: 'button') {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  @if $type == 'icon' {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  } @else if $type == 'button' {
+    width: 100%;
+    height: 50px;
+  }
+}
+
+@mixin card-styling($bg-color, $shadow, $radius: 10px) {
+  background-color: var($bg-color);
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}

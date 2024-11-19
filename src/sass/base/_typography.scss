@@ -4,10 +4,12 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   font-weight: font.$font-extraBold;
+  color: var(--color-primary);
 }
 
 p {
   margin: 0;
   padding: 0;
   font-weight: font.$font-regular;
+  color: var(--color-secndary);
 }
